@@ -17,10 +17,10 @@
 (defn mount-root []
   (re-frame/clear-subscription-cache!)
   ;; (render [] ~~) ~~ のところに [] をrender する
-  (reagent/render [views/main-panel]
+  (reagent/render [views/todo-list]
                   (.getElementById js/document "app")))
 
-(defn ^:export init [] ;; ^:export というメタデータを付けた init 
+(defn ^:export init [] ;; ^:export というメタデータを付けた init
   ; dispatch-syncでinitialize-dbイベントを発行＝アプリケーションの初期化
   (re-frame/dispatch-sync [::events/initialize-db])　
   (dev-setup)
